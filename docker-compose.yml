@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   rasachat:
-    image: rasachat
+    image: rasachat:latest
     working_dir: /app
     build: "./"
     restart: always
@@ -17,7 +17,7 @@ services:
     - all
 
   rasa-actions-server:
-    image: rasachat
+    image: rasachat:latest
     working_dir: /app
     build: "./"
     restart: always
