@@ -1,0 +1,49 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- affirmative:
+    use_entities: true
+- greet:
+    use_entities: true
+- negative:
+    use_entities: true
+- supply_email:
+    use_entities: true
+- supply_name:
+    use_entities: true
+entities:
+- fname
+- lname
+- email
+slots:
+  fname:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  lname:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  email:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_ask_name:
+  - text: Hello! Could you please provide your name?
+  utter_ask_email:
+  - text: Please provide me your email.
+  utter_acknowledge_provided_info:
+  - text: Thanks {fname} for the info!
+  utter_ask_for_confirmation:
+  - text: Is the following data correct ? First Name - {fname} , Last Name - {lname} , email - {email}
+actions: []
+forms: {}
+e2e_actions: []
