@@ -1,63 +1,10 @@
 name: rasachat
-
-# The build section defines how to build the images of your development environment
-# More info: https://www.okteto.com/docs/reference/manifest/#build
-build:
-
-  # You can use the following env vars to refer to this image in your deploy commands:
-  #  - OKTETO_BUILD_RASA-ACTIONS-SERVER_REGISTRY: image registry
-  #  - OKTETO_BUILD_RASA-ACTIONS-SERVER_REPOSITORY: image repo
-  #  - OKTETO_BUILD_RASA-ACTIONS-SERVER_IMAGE: image name
-  #  - OKTETO_BUILD_RASA-ACTIONS-SERVER_TAG: image tag
-  rasa-actions-server:
-    context: .
-    dockerfile: Dockerfile
-    image: rasachat:latest
-
-  # You can use the following env vars to refer to this image in your deploy commands:
-  #  - OKTETO_BUILD_RASACHAT_REGISTRY: image registry
-  #  - OKTETO_BUILD_RASACHAT_REPOSITORY: image repo
-  #  - OKTETO_BUILD_RASACHAT_IMAGE: image name
-  #  - OKTETO_BUILD_RASACHAT_TAG: image tag
-  rasachat:
-    context: .
-    dockerfile: Dockerfile
-    image: rasachat:latest
-
-# The deploy section defines how to deploy your development environment
-# More info: https://www.okteto.com/docs/reference/manifest/#deploy
-deploy:
-  compose:
-    file: docker-compose.yml
-
-# The dependencies section defines other git repositories to be deployed as part of your development environment
-# More info: https://www.okteto.com/docs/reference/manifest/#dependencies
-# dependencies:
-#   - https://github.com/okteto/sample
-
-
-# The dev section defines how to activate a development container
-# More info: https://www.okteto.com/docs/reference/manifest/#dev
-dev:
-  rasa-actions-server:
-    image: rasachat:latest
-    command:
-      - rasa
-      - run
-      - actions
-    sync:
-      - actions:/app/actions
-    forward:
-      - 5055:5055
-  rasachat:
-    image: rasachat:latest
-    command:
-      - sh
-      - -c
-      - bash -c "rm -rf models/* && rasa train && rasa run --enable-api --cors \"*\" --debug"
-    sync:
-      - actions:/app/actions
-      - data:/app/data
-    forward:
-      - 5006:5005
-
+command: bash
+volumes:
+  - /root/.cache/pip
+sync:
+  - .:/app
+forward:
+  - 5006:5006
+reverse:
+  - 8080:8080
