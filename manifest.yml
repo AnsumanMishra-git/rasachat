@@ -1,7 +1,0 @@
-applications:
-  - name: my-rasa-chatbot
-    memory: 1G
-    instances: 1
-    host: my-rasa-chatbot
-    path: .
-    buildpack: python_buildpack
