@@ -3,6 +3,7 @@ WORKDIR  '/app'
 COPY . /app
 USER root
 
+RUN /bin/bash -c "rm -rf models/*"
 RUN  rasa train 
 
 VOLUME /app/models
