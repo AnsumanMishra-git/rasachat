@@ -1,57 +1,55 @@
 version: '3'
-services:
-    rasa:
-      container_name: "rasa_server"
-      user: root
-      build: 
-        context:  .
-      volumes:
-      - "./:/app"
-      ports: 
-        - "5005:5005"
-    action_server:
-      container_name: "action_server"
-      build: 
-        context: actions
-      volumes:
-        - ./actions:/app/actions
-        - ./data:/app/data
-      ports:
-        - 5055:5055
-
 # services:
-#   rasa-server:
-#     image: rasabot:v2
-#     working_dir: /app
-#     build: "./"
-#     restart: always
-#     volumes:
-#     - ./actions:/app/actions
-#     - ./data:/app/data
-#     command: bash -c "rm -rf models/* && rasa train && rasa run --enable-api --cors \"*\" -p 8000"
-#     ports:
-#     - '5005:8000'
-#     #public: true
-#     networks:
-#     - all
+#     rasa:
+#       container_name: "rasa_server"
+#       user: root
+#       build: 
+#         context:  .
+#       volumes:
+#       - "./:/app"
+#       ports: 
+#         - "5005:5005"
+#     action_server:
+#       container_name: "action_server"
+#       build: 
+#         context: actions
+#       volumes:
+#         - ./actions:/app/actions
+#         - ./data:/app/data
+#       ports:
+#         - '5055:5055'
 
-#   rasa-actions-server:
-#     image: rasabot:v2
-#     working_dir: /app
-#     build: "./"
-#     restart: always
-#     volumes:
-#     - ./actions:/app/actions
-#     command: ["rasa", "run", "actions"]
-#     ports:
-#     - '5055:5055'
-#     networks:
-#     - all
+services:
+  rasa-server:
+    image: rasabot:latest
+    working_dir: /app
+    build: "./"
+    restart: always
+    volumes:
+    - ./actions:/app/actions
+    - ./data:/app/data
+    command: bash -c "rm -rf models/* && rasa train && rasa run --enable-api --cors \"*\" -p 8000"
+    ports:
+    - '5005:8000'
+    public: true
+    networks:
+    - all
 
-# networks:
-#   all:
-#     driver: bridge
-#     driver_opts:
-#       com.docker.network.enable_ipv6: "true"
+  rasa-actions-server:
+    image: rasabot:latest
+    working_dir: /app
+    build: "./"
+    restart: always
+    volumes:
+    - ./actions:/app/actions
+    command: ["rasa", "run", "actions"]
+    ports:
+    - '5055:5055'
+    networks:
+    - all
 
-
+networks:
+  all:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "true"
