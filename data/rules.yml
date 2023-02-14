@@ -1,6 +1,4 @@
-#version: "2.0"
-#
-#rules:
+
 #
 #- rule: Say goodbye anytime the user says goodbye
 #  steps:
@@ -11,3 +9,4 @@
 #  steps:
 #  - intent: bot_challenge
 #  - action: utter_iamabot
+version: "2.0"

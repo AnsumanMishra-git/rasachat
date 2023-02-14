@@ -14,13 +14,19 @@ pipeline:
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
-  - name: FallbackClassifier
-    threshold: 0.3
-    ambiguity_threshold: 0.1
+  - name: DucklingEntityExtractor
+    url: "http://localhost:8000"
+    dimensions: ["email", "number"]
+  # - name: FallbackClassifier
+  #   threshold: 0.3
+  #   ambiguity_threshold: 0.1
 
 policies:
   - name: MemoizationPolicy
+  - name: MappingPolicy
   - name: TEDPolicy
     max_history: 5
     epochs: 100
   - name: RulePolicy
+  # - name: FallbackPolicy
+  #   fallback_action_name: 'action_default_fallback'

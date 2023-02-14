@@ -1,49 +1,54 @@
-version: "2.0"
+version: '2.0'
 config:
   store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-  - affirmative:
-      use_entities: true
-  - greet:
-      use_entities: true
-  - negative:
-      use_entities: true
-  - supply_email:
-      use_entities: true
-  - supply_name:
-      use_entities: true
+- affirmative:
+    use_entities: true
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- negative:
+    use_entities: true
+- supply_email:
+    use_entities: true
+- current_matches:
+    use_entities: true
+- register:
+    use_entities: true
 entities:
-  - fname
-  - lname
-  - email
+- email
 slots:
-  fname:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: false
-  lname:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: false
   email:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
     influence_conversation: false
 responses:
-  utter_ask_name:
-    - text: Hello! Could you please provide your full name?
+  utter_greet:
+  - text: Hey! How can I help you?
   utter_ask_email:
-    - text: Please provide me your email.
+  - text: Please provide me your email.
   utter_acknowledge_provided_info:
-    - text: Thanks {fname} for the info!
+  - text: Thanks for the info!
   utter_ask_for_confirmation:
-    - text: Is the following data correct ? First Name - {fname} , Last Name - {lname} , email - {email}
-actions: []
+  - text: Is the following data correct ? email - {email}
+  utter_goodbye:
+  - text: Bye
+  utter_did_that_help:
+  - text: Did that help you?
+  - text: I hope that solved your query
+  utter_gratitude:
+  - text: Glad that I could be of help to you!
+  utter_ask_again:
+  - text: Okay! Let's start again, please tell me what do you need?
+  - text: |-
+      No issues! Let's try this again.
+       Please repeat your query?
+actions:
+- action_match_news
 forms: {}
 e2e_actions: []

@@ -1,0 +1,59 @@
+version: "2.0"
+
+stories:
+  - story: greet path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - story: news path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: current_matches
+      - action: action_match_news
+      - action: utter_did_that_help
+      - intent: affirmative
+      - action: utter_gratitude
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: news path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: current_matches
+      - action: action_match_news
+      - action: utter_did_that_help
+      - intent: negative
+      - action: utter_ask_again
+      - intent: current_matches
+      - action: action_match_news
+      - action: utter_did_that_help
+      - intent: affirmative
+      - action: utter_gratitude
+      - intent: goodbye
+      - action: utter_goodbye
+
+  #   - story: register with right info
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: register
+  #     - action: utter_ask_name
+  #     - intent: supply_name
+  #       entities:
+  #         - fname
+  #         - lname
+  #     - action: utter_ask_email
+  #     - intent: supply_email
+  #       entities:
+  #         - email
+  #     - action: utter_ask_number
+  #     - intent: supply_number
+  #       entities:
+  #         - number
+  #     - action: utter_ask_for_confirmation
+  #     - intent: affirmative
+  #     - action: utter_acknowledge_provided_info
+  #     - action: utter_goodbye

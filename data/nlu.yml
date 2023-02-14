@@ -16,71 +16,123 @@ nlu:
       - goodmorning
       - goodevening
       - good afternoon
-
-  - intent: supply_name
+  - intent: goodbye
     examples: |
-      - My name is [John](fname)
-      - [Ansu](fname) [Mishra](lname)
-      - I am [Elvis](fname) [Dash](lname)
-      - My name is [jacj](fname)
-      - [jill](fname) [mishra](lname)
-      - I am [preeti](fname) [dash](lname)
-      - My name is [daanu](fname)
-      - [lola](fname) [dola](lname)
-      - I am [blahblah](fname) [mehmeh](lname)
-      - My name is [luliya](fname)
-      - [johnson](fname) [jackson](lname)
-      - I am [dora](fname) [domuna](lname)
-      - My name is [emily](fname)
-      - [Jessi](fname) [Messy](lname)
-      - I am [Yokatua](fname) [Bokatua](lname)
-      - My name is [mary](fname)
-      - [hada](fname) [little](lname)
-      - I am [Bambu](fname) [Vumba](lname)
-      - My name is [Johnny](fname)
-      - [ansuman](fname) [mishra](lname)
-      - I am [David](fname) [Dash](lname)
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
 
+  # - intent: supply_name
+  #   examples: |
+  #     - My name is [John](fname)
+  #     - [Ansu](fname) [Mishra](lname)
+  #     - I am [Elvis](fname) [Dash](lname)
+  #     - My name is [jacj](fname)
+  #     - [jill](fname) [mishra](lname)
+  #     - I am [preeti](fname) [dash](lname)
+  #     - My name is [daanu](fname)
+  #     - [lola](fname) [dola](lname)
+  #     - I am [blahblah](fname) [mehmeh](lname)
+  #     - My name is [luliya](fname)
+  #     - [johnson](fname) [jackson](lname)
+  #     - I am [dora](fname) [domuna](lname)
+  #     - My name is [emily](fname)
+  #     - [Jessi](fname) [Messy](lname)
+  #     - I am [Yokatua](fname) [Bokatua](lname)
+  #     - My name is [mary](fname)
+  #     - [hada](fname) [little](lname)
+  #     - I am [Bambu](fname) [Vumba](lname)
+  #     - My name is [Johnny](fname)
+  #     - [ansuman](fname) [mishra](lname)
+  #     - I am [David](fname) [Dash](lname)
+
+  # - intent: supply_email
+  #   examples: |
+  #     - my email is [test@example.com](email)
+  #     - my email is [abraham.134lincoln@dom.com](email)
+  #     - my email is [abc@domain.co](email)
+  #     - my email is [lala@example.edu](email)
+  #     - my email is [ab.134kiki@abc.org](email)
+  #     - [lala@example.edu](email)
+  #     - [name.name@example.com](email)
+  #     - [abc@domain.ro](email)
+  #     - [name@ex.in](email)
+  #     - it is [admin@example.com](email)
+  #     - it is [goku@makefriends.biz](email)
+  #     - it is [lal23.a@example.edu](email)
+  #     - it is [admin123@example.com](email)
+  #     - it is [erswre@webmaster.us](email)
+  #     - [aileen.mottern@example.com](email)
+  #     - [jackson@gmail.com](email)
+  #     - [xyz@example.com](email)
+  #     - my email is [ella@rasa.com](email)
+  #     - my email is [joleen@webmaster.tk](email)
+  #     - my email is [joyboy@makefriends.biz](email)
+  #     - my email is [ella1323@rasa.com](email)
+  #     - my email is [luffytaro@companyname.gq](email)
+  #     - my email is [ella@rasa.com](email)
+  #     - my email is [ab.kiki@abc.org](email)
+  #     - [abraham.lincoln@example.com](email)
+  #     - [sara@rasa.com](email)
+  #     - [w32ebmaster@zrej98.xyz](email)
+  #     - [godussop@webmaster.pl](email)
+  #     - [roronoazoro@example.icu](email)
+  #     - [panda@webmaster.us](email)
+  #     - [pizza@companyname.shop](email)
+  #     - [monkeydluffy@makefriends.biz](email)
+  #     - [penguin@zurotrinz.ru](email)
+  #     - [hippo@makapay.cf](email)
+  #     - [shanks@example.ga](email)
+  #     - [kaagebunshin.31@companyname.gq](email)
+  #     - [brooksoul71@zurtel.ml](email)
+  #     - [saanji@webmaster.tk](email)
   - intent: supply_email
     examples: |
-      - my email is [test@example.com](email)
-      - my email is [abraham.134lincoln@dom.com](email)
-      - my email is [abc@domain.co](email)
-      - my email is [lala@example.edu](email)
-      - my email is [ab.134kiki@abc.org](email)
-      - [lala@example.edu](email)
-      - [name.name@example.com](email)
-      - [abc@domain.ro](email)
-      - [name@ex.in](email)
-      - it is [admin@example.com](email)
-      - it is [goku@makefriends.biz](email)
-      - it is [lal23.a@example.edu](email)
-      - it is [admin123@example.com](email)
-      - it is [erswre@webmaster.us](email)
-      - [aileen.mottern@example.com](email)
-      - [jackson@gmail.com](email)
-      - [xyz@example.com](email)
-      - my email is [ella@rasa.com](email)
-      - my email is [joleen@webmaster.tk](email)
-      - my email is [joyboy@makefriends.biz](email)
-      - my email is [ella1323@rasa.com](email)
-      - my email is [luffytaro@companyname.gq](email)
-      - my email is [ella@rasa.com](email)
-      - my email is [ab.kiki@abc.org](email)
-      - [abraham.lincoln@example.com](email)
-      - [sara@rasa.com](email)
-      - [w32ebmaster@zrej98.xyz](email)
-      - [godussop@webmaster.pl](email)
-      - [roronoazoro@example.icu](email)
-      - [panda@webmaster.us](email)
-      - [pizza@companyname.shop](email)
-      - [monkeydluffy@makefriends.biz](email)
-      - [penguin@zurotrinz.ru](email)
-      - [hippo@makapay.cf](email)
-      - [shanks@example.ga](email)
-      - [kaagebunshin.31@companyname.gq](email)
-      - [brooksoul71@zurtel.ml](email)
-      - [saanji@webmaster.tk](email)
+      - my email is test@example.com] 
+      - my email is abraham.134lincoln@dom.com] 
+      - my email is abc@domain.co] 
+      - my email is lala@example.edu] 
+      - my email is ab.134kiki@abc.org] 
+      - lala@example.edu 
+      - name.name@example.com 
+      - abc@domain.ro 
+      - name@ex.in] 
+      - it is admin@example.com
+      - it is goku@makefriends.biz
+      - it is lal23.a@example.edu
+      - it is admin123@example.com 
+      - it is rswre@webmaster.us
+      - aileen.mottern@example.com
+      - jackson@gmail.com
+      - xyz@example.com
+      - my email is ella@rasa.com
+      - my email is joleen@webmaster.tk
+      - my email is joyboy@makefriends.biz
+      - my email is ella1323@rasa.com
+      - my email is luffytaro@companyname.gq
+      - my email is ella@rasa.com
+      - my email is ab.kiki@abc.org
+      - abraham.lincoln@example.com
+      - sara@rasa.com
+      - w32ebmaster@zrej98.xyz
+      - godussop@webmaster.pl
+      - [roronoazoro@example.icu
+      - panda@webmaster.us
+      - pizza@companyname.shop
+      - monkeydluffy@makefriends.biz
+      - penguin@zurotrinz.ru
+      - hippo@makapay.cf
+      - shanks@example.ga
+      - kaagebunshin.31@companyname.gq
+      - brooksoul71@zurtel.ml
+      - saanji@webmaster.t
 
   - intent: affirmative
     examples: |
@@ -99,3 +151,34 @@ nlu:
       - no it is wrong
       - its wrong
       - it is wrong
+
+  - intent: current_matches
+    examples: |
+      - what are the current matches
+      - can you list the matches in ipl 2019
+      - which cricket match is happening right now
+      - which ipl match is next
+      - which teams are playing next in ipl
+      - which team will play next in ipl
+      - tell me some ipl news
+      - i want ipl updates
+      - can you give me ipl latest updates
+      - what are the latest match updates
+      - who won the last ipl match
+      - which teams are competing in the next match
+      - how is ipl going
+      - what was the result of the last match
+      - when is the next match
+
+  - intent: register
+    examples: |
+      - i want to register
+      - want to register
+      - to register
+      - register
+      - register me
+      - please register
+      - help me register
+      - i need to register
+      - need to register
+      - register myself
