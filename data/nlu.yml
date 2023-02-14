@@ -53,86 +53,86 @@ nlu:
   #     - [ansuman](fname) [mishra](lname)
   #     - I am [David](fname) [Dash](lname)
 
-  # - intent: supply_email
-  #   examples: |
-  #     - my email is [test@example.com](email)
-  #     - my email is [abraham.134lincoln@dom.com](email)
-  #     - my email is [abc@domain.co](email)
-  #     - my email is [lala@example.edu](email)
-  #     - my email is [ab.134kiki@abc.org](email)
-  #     - [lala@example.edu](email)
-  #     - [name.name@example.com](email)
-  #     - [abc@domain.ro](email)
-  #     - [name@ex.in](email)
-  #     - it is [admin@example.com](email)
-  #     - it is [goku@makefriends.biz](email)
-  #     - it is [lal23.a@example.edu](email)
-  #     - it is [admin123@example.com](email)
-  #     - it is [erswre@webmaster.us](email)
-  #     - [aileen.mottern@example.com](email)
-  #     - [jackson@gmail.com](email)
-  #     - [xyz@example.com](email)
-  #     - my email is [ella@rasa.com](email)
-  #     - my email is [joleen@webmaster.tk](email)
-  #     - my email is [joyboy@makefriends.biz](email)
-  #     - my email is [ella1323@rasa.com](email)
-  #     - my email is [luffytaro@companyname.gq](email)
-  #     - my email is [ella@rasa.com](email)
-  #     - my email is [ab.kiki@abc.org](email)
-  #     - [abraham.lincoln@example.com](email)
-  #     - [sara@rasa.com](email)
-  #     - [w32ebmaster@zrej98.xyz](email)
-  #     - [godussop@webmaster.pl](email)
-  #     - [roronoazoro@example.icu](email)
-  #     - [panda@webmaster.us](email)
-  #     - [pizza@companyname.shop](email)
-  #     - [monkeydluffy@makefriends.biz](email)
-  #     - [penguin@zurotrinz.ru](email)
-  #     - [hippo@makapay.cf](email)
-  #     - [shanks@example.ga](email)
-  #     - [kaagebunshin.31@companyname.gq](email)
-  #     - [brooksoul71@zurtel.ml](email)
-  #     - [saanji@webmaster.tk](email)
   - intent: supply_email
     examples: |
-      - my email is test@example.com] 
-      - my email is abraham.134lincoln@dom.com] 
-      - my email is abc@domain.co] 
-      - my email is lala@example.edu] 
-      - my email is ab.134kiki@abc.org] 
-      - lala@example.edu 
-      - name.name@example.com 
-      - abc@domain.ro 
-      - name@ex.in] 
-      - it is admin@example.com
-      - it is goku@makefriends.biz
-      - it is lal23.a@example.edu
-      - it is admin123@example.com 
-      - it is rswre@webmaster.us
-      - aileen.mottern@example.com
-      - jackson@gmail.com
-      - xyz@example.com
-      - my email is ella@rasa.com
-      - my email is joleen@webmaster.tk
-      - my email is joyboy@makefriends.biz
-      - my email is ella1323@rasa.com
-      - my email is luffytaro@companyname.gq
-      - my email is ella@rasa.com
-      - my email is ab.kiki@abc.org
-      - abraham.lincoln@example.com
-      - sara@rasa.com
-      - w32ebmaster@zrej98.xyz
-      - godussop@webmaster.pl
-      - [roronoazoro@example.icu
-      - panda@webmaster.us
-      - pizza@companyname.shop
-      - monkeydluffy@makefriends.biz
-      - penguin@zurotrinz.ru
-      - hippo@makapay.cf
-      - shanks@example.ga
-      - kaagebunshin.31@companyname.gq
-      - brooksoul71@zurtel.ml
-      - saanji@webmaster.t
+      - my email is [test@example.com](email)
+      - my email is [abraham.134lincoln@dom.com](email)
+      - my email is [abc@domain.co](email)
+      - my email is [lala@example.edu](email)
+      - my email is [ab.134kiki@abc.org](email)
+      - [lala@example.edu](email)
+      - [name.name@example.com](email)
+      - [abc@domain.ro](email)
+      - [name@ex.in](email)
+      - it is [admin@example.com](email)
+      - it is [goku@makefriends.biz](email)
+      - it is [lal23.a@example.edu](email)
+      - it is [admin123@example.com](email)
+      - it is [erswre@webmaster.us](email)
+      - [aileen.mottern@example.com](email)
+      - [jackson@gmail.com](email)
+      - [xyz@example.com](email)
+      - my email is [ella@rasa.com](email)
+      - my email is [joleen@webmaster.tk](email)
+      - my email is [joyboy@makefriends.biz](email)
+      - my email is [ella1323@rasa.com](email)
+      - my email is [luffytaro@companyname.gq](email)
+      - my email is [ella@rasa.com](email)
+      - my email is [ab.kiki@abc.org](email)
+      - [abraham.lincoln@example.com](email)
+      - [sara@rasa.com](email)
+      - [w32ebmaster@zrej98.xyz](email)
+      - [godussop@webmaster.pl](email)
+      - [roronoazoro@example.icu](email)
+      - [panda@webmaster.us](email)
+      - [pizza@companyname.shop](email)
+      - [monkeydluffy@makefriends.biz](email)
+      - [penguin@zurotrinz.ru](email)
+      - [hippo@makapay.cf](email)
+      - [shanks@example.ga](email)
+      - [kaagebunshin.31@companyname.gq](email)
+      - [brooksoul71@zurtel.ml](email)
+      - [saanji@webmaster.tk](email)
+  # - intent: supply_email
+  #   examples: |
+  #     - my email is test@example.com] 
+  #     - my email is abraham.134lincoln@dom.com] 
+  #     - my email is abc@domain.co] 
+  #     - my email is lala@example.edu] 
+  #     - my email is ab.134kiki@abc.org] 
+  #     - lala@example.edu 
+  #     - name.name@example.com 
+  #     - abc@domain.ro 
+  #     - name@ex.in] 
+  #     - it is admin@example.com
+  #     - it is goku@makefriends.biz
+  #     - it is lal23.a@example.edu
+  #     - it is admin123@example.com 
+  #     - it is rswre@webmaster.us
+  #     - aileen.mottern@example.com
+  #     - jackson@gmail.com
+  #     - xyz@example.com
+  #     - my email is ella@rasa.com
+  #     - my email is joleen@webmaster.tk
+  #     - my email is joyboy@makefriends.biz
+  #     - my email is ella1323@rasa.com
+  #     - my email is luffytaro@companyname.gq
+  #     - my email is ella@rasa.com
+  #     - my email is ab.kiki@abc.org
+  #     - abraham.lincoln@example.com
+  #     - sara@rasa.com
+  #     - w32ebmaster@zrej98.xyz
+  #     - godussop@webmaster.pl
+  #     - [roronoazoro@example.icu
+  #     - panda@webmaster.us
+  #     - pizza@companyname.shop
+  #     - monkeydluffy@makefriends.biz
+  #     - penguin@zurotrinz.ru
+  #     - hippo@makapay.cf
+  #     - shanks@example.ga
+  #     - kaagebunshin.31@companyname.gq
+  #     - brooksoul71@zurtel.ml
+  #     - saanji@webmaster.t
 
   - intent: affirmative
     examples: |

@@ -14,9 +14,9 @@ pipeline:
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
-  - name: DucklingEntityExtractor
-    url: "http://localhost:8000"
-    dimensions: ["email", "number"]
+  # - name: DucklingEntityExtractor
+  #   url: "https://duckling-server:8000"
+  #   dimensions: ["email", "number"]
   # - name: FallbackClassifier
   #   threshold: 0.3
   #   ambiguity_threshold: 0.1
