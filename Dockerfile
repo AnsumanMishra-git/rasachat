@@ -13,7 +13,7 @@
 
 # EXPOSE 5005
 
-FROM rasa/rasa:2.7.0 AS BASE
+FROM python:3.7.16 AS BASE
 
 RUN apt-get update \
     && apt-get --assume-yes --no-install-recommends install \
@@ -29,7 +29,7 @@ WORKDIR /app
 # upgrade pip version
 RUN pip install --no-cache-dir --upgrade pip
 
-# RUN pip install rasa==2.8.14
+RUN pip install rasa==2.7.0
 
 ADD config.yml config.yml
 ADD domain.yml domain.yml
