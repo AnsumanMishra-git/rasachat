@@ -22,7 +22,7 @@ version: '3'
 
 services:
   rasa-server:
-    image: rasabot:latest
+    image: oktetobot:latest
     working_dir: /app
     build: "./"
     restart: always
@@ -37,7 +37,7 @@ services:
     - all
 
   rasa-actions-server:
-    image: rasabot:latest
+    image: oktetobot:latest
     working_dir: /app
     build: "./"
     restart: always
