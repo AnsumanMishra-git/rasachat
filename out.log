@@ -1095,3 +1095,156 @@ task: <Task pending name='Task-5' coro=<AsyncServer._service_task() running at /
 2023-02-14 09:29:42,813 [DEBUG]  Finished loading the model.
 2023-02-14 09:29:42,816 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
 2023-02-14 09:29:42,816 [INFO ]  Rasa server is up and running.
+2023-02-14 19:11:07,837 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/socket.io                                         GET                            handle_request
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/webhooks/socketio                                 GET                            socketio_webhook.health
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-02-14 19:11:07,839 [INFO ]  Starting Rasa server on http://localhost:5005
+2023-02-14 19:11:07,839 [DEBUG]  Using the default number of Sanic workers (1).
+2023-02-14 19:11:07,851 [INFO ]  Loading model models/20230214-191047.tar.gz...
+2023-02-14 19:11:08,373 [DEBUG]  Extracted model to '/tmp/tmpqzspiabf'.
+2023-02-14 19:11:08,390 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-02-14 19:11:09,656 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-02-14 19:11:09,672 [INFO ]  Enabling coroutine debugging. Loop id 97182384.
+2023-02-14 19:11:09,674 [INFO ]  Loading model models/20230214-191047.tar.gz...
+2023-02-14 19:11:10,126 [DEBUG]  Extracted model to '/tmp/tmp2939ka_k'.
+2023-02-14 19:11:10,245 [DEBUG]  Loading the model from /tmp/tmp2939ka_k/nlu/component_5_DIETClassifier.tf_model with finetune_mode=False...
+2023-02-14 19:11:10,351 [DEBUG]  Following metrics will be logged during training: 
+2023-02-14 19:11:10,351 [DEBUG]    t_loss (total loss)
+2023-02-14 19:11:10,351 [DEBUG]    i_acc (intent acc)
+2023-02-14 19:11:10,352 [DEBUG]    i_loss (intent loss)
+2023-02-14 19:11:10,352 [DEBUG]    e_f1 (entity f1)
+2023-02-14 19:11:10,352 [DEBUG]    e_loss (entity loss)
+2023-02-14 19:11:23,305 [DEBUG]  Finished loading the model.
+2023-02-14 19:11:23,306 [DEBUG]  Failed to load model for 'ResponseSelector'. Maybe you did not provide enough training data and no model was trained or the path '/tmp/tmp2939ka_k/nlu' doesn't exist?
+2023-02-14 19:11:23,313 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-02-14 19:11:23,313 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-02-14 19:11:23,626 [DEBUG]  Extracted model to '/tmp/tmp0rafzd7s'.
+2023-02-14 19:11:23,658 [DEBUG]  Loading the model from /tmp/tmp0rafzd7s/core/policy_1_TEDPolicy/ted_policy.tf_model with finetune_mode=False...
+2023-02-14 19:11:31,239 [DEBUG]  Finished loading the model.
+2023-02-14 19:11:31,244 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-02-14 19:11:31,244 [INFO ]  Rasa server is up and running.
+2023-02-14 19:29:24,705 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/socket.io                                         POST                           handle_request
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/webhooks/socketio                                 GET                            socketio_webhook.health
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-02-14 19:29:24,713 [INFO ]  Starting Rasa server on http://localhost:5005
+2023-02-14 19:29:24,714 [DEBUG]  Using the default number of Sanic workers (1).
+2023-02-14 19:29:24,748 [INFO ]  Loading model models/20230214-191047.tar.gz...
+2023-02-14 19:29:26,622 [DEBUG]  Extracted model to '/tmp/tmpva2acl36'.
+2023-02-14 19:29:26,651 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-02-14 19:29:28,403 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-02-14 19:29:28,424 [INFO ]  Enabling coroutine debugging. Loop id 100417248.
+2023-02-14 19:29:28,426 [INFO ]  Loading model models/20230214-191047.tar.gz...
+2023-02-14 19:29:29,007 [DEBUG]  Extracted model to '/tmp/tmpms65n4sx'.
+2023-02-14 19:29:29,284 [DEBUG]  Loading the model from /tmp/tmpms65n4sx/nlu/component_5_DIETClassifier.tf_model with finetune_mode=False...
+2023-02-14 19:29:29,632 [DEBUG]  Following metrics will be logged during training: 
+2023-02-14 19:29:29,633 [DEBUG]    t_loss (total loss)
+2023-02-14 19:29:29,633 [DEBUG]    i_acc (intent acc)
+2023-02-14 19:29:29,634 [DEBUG]    i_loss (intent loss)
+2023-02-14 19:29:29,634 [DEBUG]    e_f1 (entity f1)
+2023-02-14 19:29:29,635 [DEBUG]    e_loss (entity loss)
+2023-02-14 19:29:50,640 [DEBUG]  Finished loading the model.
+2023-02-14 19:29:50,643 [DEBUG]  Failed to load model for 'ResponseSelector'. Maybe you did not provide enough training data and no model was trained or the path '/tmp/tmpms65n4sx/nlu' doesn't exist?
+2023-02-14 19:29:50,652 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-02-14 19:29:50,653 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-02-14 19:29:51,093 [DEBUG]  Extracted model to '/tmp/tmp4zx6ju7b'.
+2023-02-14 19:29:51,129 [DEBUG]  Loading the model from /tmp/tmp4zx6ju7b/core/policy_1_TEDPolicy/ted_policy.tf_model with finetune_mode=False...
+2023-02-14 19:30:06,510 [DEBUG]  Finished loading the model.
+2023-02-14 19:30:06,518 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-02-14 19:30:06,519 [INFO ]  Rasa server is up and running.
+2023-02-14 19:59:36,204 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/socket.io                                         OPTIONS                        handle_request
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/webhooks/socketio                                 GET                            socketio_webhook.health
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-02-14 19:59:36,227 [INFO ]  Starting Rasa server on http://localhost:5005
+2023-02-14 19:59:36,228 [DEBUG]  Using the default number of Sanic workers (1).
+2023-02-14 19:59:36,246 [INFO ]  Loading model models/20230214-195843.tar.gz...
+2023-02-14 19:59:38,332 [DEBUG]  Extracted model to '/tmp/tmpzu9gr0ch'.
+2023-02-14 19:59:38,435 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-02-14 19:59:40,102 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-02-14 19:59:40,122 [INFO ]  Enabling coroutine debugging. Loop id 99825440.
+2023-02-14 19:59:40,125 [INFO ]  Loading model models/20230214-195843.tar.gz...
+2023-02-14 19:59:41,070 [DEBUG]  Extracted model to '/tmp/tmpxgtzugxj'.
+2023-02-14 19:59:41,587 [DEBUG]  Loading the model from /tmp/tmpxgtzugxj/nlu/component_5_DIETClassifier.tf_model with finetune_mode=False...
+2023-02-14 19:59:42,564 [DEBUG]  Following metrics will be logged during training: 
+2023-02-14 19:59:42,567 [DEBUG]    t_loss (total loss)
+2023-02-14 19:59:42,569 [DEBUG]    i_acc (intent acc)
+2023-02-14 19:59:42,573 [DEBUG]    i_loss (intent loss)
+2023-02-14 19:59:42,574 [DEBUG]    e_f1 (entity f1)
+2023-02-14 19:59:42,574 [DEBUG]    e_loss (entity loss)
+2023-02-14 20:00:05,944 [DEBUG]  Finished loading the model.
+2023-02-14 20:00:05,949 [DEBUG]  Failed to load model for 'ResponseSelector'. Maybe you did not provide enough training data and no model was trained or the path '/tmp/tmpxgtzugxj/nlu' doesn't exist?
+2023-02-14 20:00:06,002 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-02-14 20:00:06,003 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-02-14 20:00:07,926 [DEBUG]  Extracted model to '/tmp/tmpdb6e9ygs'.
+2023-02-14 20:00:08,091 [DEBUG]  Loading the model from /tmp/tmpdb6e9ygs/core/policy_1_TEDPolicy/ted_policy.tf_model with finetune_mode=False...
+2023-02-14 20:00:25,549 [DEBUG]  Finished loading the model.
+2023-02-14 20:00:25,570 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-02-14 20:00:25,571 [INFO ]  Rasa server is up and running.
