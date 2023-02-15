@@ -6,34 +6,93 @@ stories:
       - intent: greet
       - action: utter_greet
       - intent: register
-      - action: utter_ask_email
-      - intent: supply_email
-        entities:
-        - email
-      - action: utter_ask_for_confirmation
-      - intent: affirmative
-      - action: utter_acknowledge_provided_info
+      - action: register_form
+      - active_loop: register_form
+      - slot_was_set:
+          - requested_slot: first_name
+      - slot_was_set:
+          - first_name: ansuman
+      - slot_was_set:
+          - requested_slot: last_name
+      - slot_was_set:
+          - last_name: mishra
+      - slot_was_set:
+          - requested_slot: null
+      - slot_was_set:
+          - requested_slot: email
+      - slot_was_set:
+          - email: crazy3.14@gmail.com
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_submit
+      - action: utter_slots_values
       - action: utter_goodbye
-
   - story: greet path 2
     steps:
-      - intent: greet
-      - action: utter_greet
       - intent: register
-      - action: utter_ask_email
-      - intent: supply_email
-        entities:
-          - email
-      - action: utter_ask_for_confirmation
-      - intent: negative
-      - action: utter_ask_email
-      - intent: supply_email
-        entities:
-          - email
-      - action: utter_acknowledge_provided_info
+      - action: register_form
+      - active_loop: register_form
+      - slot_was_set:
+          - requested_slot: first_name
+      - slot_was_set:
+          - first_name: ansuman
+      - slot_was_set:
+          - requested_slot: last_name
+      - slot_was_set:
+          - last_name: mishra
+      - slot_was_set:
+          - requested_slot: null
+      - slot_was_set:
+          - requested_slot: email
+      - slot_was_set:
+          - email: crazy3.14@gmail.com
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_submit
+      - action: utter_slots_values
       - action: utter_goodbye
-
-  - story: greet path 1
+  - story: happy path
     steps:
       - intent: greet
       - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+  # - story: greet path 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: register
+  #     - action: utter_ask_email
+  #     - intent: supply_email
+  #       entities:
+  #         - email
+  #     - action: utter_ask_for_confirmation
+  #     - intent: deny
+  #     - action: utter_ask_email
+  #     - intent: supply_email
+  #       entities:
+  #         - email
+  #     - action: utter_acknowledge_provided_info
+  #     - action: utter_goodbye

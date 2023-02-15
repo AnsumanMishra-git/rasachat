@@ -13,7 +13,7 @@ stories:
       - intent: current_matches
       - action: action_match_news
       - action: utter_did_that_help
-      - intent: affirmative
+      - intent: affirm
       - action: utter_gratitude
       - intent: goodbye
       - action: utter_goodbye
@@ -25,12 +25,12 @@ stories:
       - intent: current_matches
       - action: action_match_news
       - action: utter_did_that_help
-      - intent: negative
+      - intent: deny
       - action: utter_ask_again
       - intent: current_matches
       - action: action_match_news
       - action: utter_did_that_help
-      - intent: affirmative
+      - intent: affirm
       - action: utter_gratitude
       - intent: goodbye
       - action: utter_goodbye
@@ -54,6 +54,6 @@ stories:
   #       entities:
   #         - number
   #     - action: utter_ask_for_confirmation
-  #     - intent: affirmative
+  #     - intent: affirm
   #     - action: utter_acknowledge_provided_info
   #     - action: utter_goodbye
