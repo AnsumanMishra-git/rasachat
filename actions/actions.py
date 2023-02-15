@@ -17,7 +17,6 @@ import json
 from datetime import datetime
 import random
 
-logger = logging.getLogger(__name__)
 
 API_URL = "https://api.cricapi.com/v1/currentMatches"
 API_KEY = "d0b73bf4-e8fc-4d3b-a9d8-8b8b6467c36b"
@@ -46,14 +45,14 @@ class ApiAction(Action):
         return []
 
 # class ActionHelloWorld(Action):
-#
+
 #     def name(self) -> Text:
 #         return "action_hello_world"
-#
+
 #     def run(self, dispatcher: CollectingDispatcher,
 #             tracker: Tracker,
 #             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
+
 #         dispatcher.utter_message(text="Hello World!")
-#
+
 #         return []

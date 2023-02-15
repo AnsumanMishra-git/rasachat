@@ -1,11 +1,11 @@
-# FROM rasa/rasa-sdk:2.7.0
-# WORKDIR /app
-
+FROM rasa/rasa-sdk:2.7.0
+WORKDIR '/app'
+COPY . /app
 # COPY requirement.txt requirement.txt
-# USER root
-# COPY ../actions /app
+USER root
+
 # RUN pip install -r requirement.txt
 
-# EXPOSE 5055
-# USER 1001
+EXPOSE 5055
+USER 1001
 

@@ -13,9 +13,18 @@
 #  action_endpoint:
 #    url: "http://localhost:5055/webhook"
 # action_endpoint:
-#  url: 'http://action_server/webhook'
+#  url: 'http://action_server:5055/webhook'
+# action_endpoint:
+#   url: "http://action_server/webhook"
+# action_endpoint:
+#   url: "https://rasa-actions-hybrid.cfapps.us10-001.hana.ondemand.com/webhook"
 action_endpoint:
-  url: "http://rasa-actions-server:5055/webhook"
+  url: "https://rasa-actions-hybrid.cfapps.us10-001.hana.ondemand.com/webhook"
+# action_endpoint:
+#   url: "https://rasa-action-hybrid:5055/webhook"
+# action_endpoint:
+#   url: "https://rasa-action-hybrid/webhook"
+
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
 # https://rasa.com/docs/rasa/tracker-stores
