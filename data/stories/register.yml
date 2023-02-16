@@ -1,21 +1,7 @@
 version: "2.0"
 
 stories:
-  - story: greet path 1
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: register
-      - action: utter_ask_email
-      - intent: supply_email
-        entities:
-        - email
-      - action: utter_ask_for_confirmation
-      - intent: affirmative
-      - action: utter_acknowledge_provided_info
-      - action: utter_goodbye
-
-  - story: greet path 2
+  - story: register path 1
     steps:
       - intent: greet
       - action: utter_greet
@@ -25,7 +11,21 @@ stories:
         entities:
           - email
       - action: utter_ask_for_confirmation
-      - intent: negative
+      - intent: affirm
+      - action: utter_acknowledge_provided_info
+      - action: utter_goodbye
+
+  - story: register path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: register
+      - action: utter_ask_email
+      - intent: supply_email
+        entities:
+          - email
+      - action: utter_ask_for_confirmation
+      - intent: deny
       - action: utter_ask_email
       - intent: supply_email
         entities:
@@ -33,7 +33,7 @@ stories:
       - action: utter_acknowledge_provided_info
       - action: utter_goodbye
 
-  - story: greet path 1
+  - story: greet path
     steps:
       - intent: greet
       - action: utter_greet

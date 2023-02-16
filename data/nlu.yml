@@ -95,19 +95,19 @@ nlu:
       - [saanji@webmaster.tk](email)
   # - intent: supply_email
   #   examples: |
-  #     - my email is test@example.com] 
-  #     - my email is abraham.134lincoln@dom.com] 
-  #     - my email is abc@domain.co] 
-  #     - my email is lala@example.edu] 
-  #     - my email is ab.134kiki@abc.org] 
-  #     - lala@example.edu 
-  #     - name.name@example.com 
-  #     - abc@domain.ro 
-  #     - name@ex.in] 
+  #     - my email is test@example.com]
+  #     - my email is abraham.134lincoln@dom.com]
+  #     - my email is abc@domain.co]
+  #     - my email is lala@example.edu]
+  #     - my email is ab.134kiki@abc.org]
+  #     - lala@example.edu
+  #     - name.name@example.com
+  #     - abc@domain.ro
+  #     - name@ex.in]
   #     - it is admin@example.com
   #     - it is goku@makefriends.biz
   #     - it is lal23.a@example.edu
-  #     - it is admin123@example.com 
+  #     - it is admin123@example.com
   #     - it is rswre@webmaster.us
   #     - aileen.mottern@example.com
   #     - jackson@gmail.com
@@ -134,7 +134,7 @@ nlu:
   #     - brooksoul71@zurtel.ml
   #     - saanji@webmaster.t
 
-  - intent: affirmative
+  - intent: affirm
     examples: |
       - yes
       - yep
@@ -143,7 +143,7 @@ nlu:
       - its right
       - it is correct
 
-  - intent: negative
+  - intent: deny
     examples: |
       - no
       - nope
@@ -182,3 +182,41 @@ nlu:
       - i need to register
       - need to register
       - register myself
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?

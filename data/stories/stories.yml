@@ -1,10 +1,32 @@
 version: "2.0"
 
 stories:
-  - story: greet path 2
+  - story: happy path
     steps:
       - intent: greet
       - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
 
   - story: news path 1
     steps:
@@ -13,7 +35,7 @@ stories:
       - intent: current_matches
       - action: action_match_news
       - action: utter_did_that_help
-      - intent: affirmative
+      - intent: affirm
       - action: utter_gratitude
       - intent: goodbye
       - action: utter_goodbye
@@ -25,12 +47,12 @@ stories:
       - intent: current_matches
       - action: action_match_news
       - action: utter_did_that_help
-      - intent: negative
+      - intent: deny
       - action: utter_ask_again
       - intent: current_matches
       - action: action_match_news
       - action: utter_did_that_help
-      - intent: affirmative
+      - intent: affirm
       - action: utter_gratitude
       - intent: goodbye
       - action: utter_goodbye
@@ -54,6 +76,6 @@ stories:
   #       entities:
   #         - number
   #     - action: utter_ask_for_confirmation
-  #     - intent: affirmative
+  #     - intent: affirm
   #     - action: utter_acknowledge_provided_info
   #     - action: utter_goodbye
