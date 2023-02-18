@@ -43,6 +43,13 @@ responses:
     - text: Great, carry on!
   utter_greet:
     - text: Hey! How can I help you?
+      buttons:
+      - title: User Details
+        payload: /details
+      - title: Change Email
+        payload: /change_email
+      - title: Cricket News
+        payload: /current_matches
   utter_ask_email:
     - text: Please provide me your email.
   utter_ask_new_email:
