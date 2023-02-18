@@ -15,11 +15,20 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - details
+  - supply_empid
+  - change_email
 
 entities:
   - email
+  - empid
 slots:
   email:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  empid:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
@@ -36,6 +45,10 @@ responses:
     - text: Hey! How can I help you?
   utter_ask_email:
     - text: Please provide me your email.
+  utter_ask_new_email:
+    - text: Please provide your new email.
+  utter_ask_empid:
+    - text: Please provide me your employee id.
   utter_acknowledge_provided_info:
     - text: Thanks for the info!
   utter_ask_for_confirmation:
@@ -54,5 +67,7 @@ responses:
          Please repeat your query?
 actions:
   - action_match_news
+  - action_get_emp_detail
+  - action_update_email
 forms: {}
 e2e_actions: []

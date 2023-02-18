@@ -220,3 +220,50 @@ nlu:
       - are you a human?
       - am I talking to a bot?
       - am I talking to a human?
+
+  - intent: details
+    examples: |
+      - fetch user details
+      - give user info
+      - give me user details
+      - provide me user details
+      - send me user info
+      - show user details
+      - send user details
+      - fetch employee info
+      - fetch employee details
+      - give employee info
+      - give me employee details
+      - provide me employee info
+      - send me employee details
+      - show employee info
+      - send employee details
+      - fetch employee info
+
+  - intent: supply_empid
+    examples: |
+      - my emp id is [134927](empid)
+      - my emp id is [134925](empid)
+      - [1349127](empid)
+      - it is [124927](empid)
+      - emp id [134327](empid)
+      - [134327](empid)
+      - id is [134417](empid) 
+      - my employee id is [132927](empid)
+      - my employee id is [1343927](empid)
+      - [134925](empid)
+      - it is [134947](empid)
+      - employee id [1324927](empid)
+      - [134925](empid)
+      - id is [134227](empid) 
+  - intent: change_email
+    examples: |
+      - change my email
+      - please change my email
+      - i want to change my email
+      - can i change my email
+      - could you please change my email
+      - i request you to change my email
+      - change my email please
+
+

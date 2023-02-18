@@ -37,3 +37,33 @@ stories:
     steps:
       - intent: greet
       - action: utter_greet
+
+  - story: show details
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: details
+      - action: utter_ask_empid
+      - intent: supply_empid
+        entities:
+          - empid
+      - action: action_get_emp_detail
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: change email
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: change_email
+      - action: utter_ask_empid
+      - intent: supply_empid
+        entities:
+          - empid
+      - action: utter_ask_new_email
+      - intent: supply_email
+        entities:
+          - email
+      - action: action_update_email
+      - intent: goodbye
+      - action: utter_goodbye

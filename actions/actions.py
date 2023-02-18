@@ -8,7 +8,7 @@
 # This is a simple example for a custom action which utters "Hello World!"
 
 from typing import Any, Text, Dict, List
-
+from rasa_sdk.events import SlotSet
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import logging
@@ -20,6 +20,37 @@ import random
 
 API_URL = "https://api.cricapi.com/v1/currentMatches"
 API_KEY = "d0b73bf4-e8fc-4d3b-a9d8-8b8b6467c36b"
+
+#This action is to signal that the assistant should get orderid from user and give order status .
+
+class ActionGetEmpDetail(Action):
+
+    def name(self)-> Text:
+        return "action_get_emp_detail"
+    
+    def run(self, dispatcher, tracker, domain):
+        eid = tracker.get_slot('empid')
+        res = requests.get('http://localhost:3000/{}'.format(eid)).json()
+        print(res)
+        response = """The name is {} \n""".format(res['name'])+"""The email is {} \n""".format(res['email'])+"""The phone is {} \n""".format(res['phone'])+"""The place is {} \n""".format(res['place'])
+        dispatcher.utter_message(response)
+        return None 
+
+#This action is to signal that the assistant should get email id from user and give response if email is updated successfully or not.
+class ActionUpdateEmail(Action):
+
+    def name(self)-> Text:
+        return "action_update_email"
+    
+    def run(self, dispatcher, tracker, domain):
+
+        eid = tracker.get_slot('empid')
+        mail = tracker.get_slot('email')
+        res = requests.post('http://localhost:3000/update/{}/editmail/{}'.format(eid,mail)).json()
+        print(res)
+        response = """Your new email {} has been set.""".format(mail)
+        dispatcher.utter_message(response)
+        return [SlotSet('email', None)]
 
 
 class ApiAction(Action):
