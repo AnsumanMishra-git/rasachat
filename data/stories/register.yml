@@ -5,6 +5,7 @@ stories:
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_service
       - intent: register
       - action: utter_ask_email
       - intent: supply_email
@@ -19,6 +20,7 @@ stories:
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_service
       - intent: register
       - action: utter_ask_email
       - intent: supply_email
@@ -37,24 +39,50 @@ stories:
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_service
 
-  - story: show details
+  - story: show details 1
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_service
       - intent: details
       - action: utter_ask_empid
       - intent: supply_empid
         entities:
           - empid
       - action: action_get_emp_detail
-      - intent: goodbye
-      - action: utter_goodbye
+      - action: utter_more_service
+      - intent: affirm
+      - action: utter_service
+      - intent: details
+      - action: utter_ask_empid
+      - intent: supply_empid
+        entities:
+          - empid
+      - action: action_get_emp_detail
+      - action: utter_more_service
 
-  - story: change email
+  - story: show details 2
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_service
+      - intent: details
+      - action: utter_ask_empid
+      - intent: supply_empid
+        entities:
+          - empid
+      - action: action_get_emp_detail
+      - action: utter_more_service
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: change email 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_service
       - intent: change_email
       - action: utter_ask_empid
       - intent: supply_empid
@@ -65,5 +93,110 @@ stories:
         entities:
           - email
       - action: action_update_email
-      - intent: goodbye
+      - action: utter_more_service
+      - intent: affirm
+      - action: utter_service
+      - intent: change_email
+      - action: utter_ask_empid
+      - intent: supply_empid
+        entities:
+          - empid
+      - action: utter_ask_new_email
+      - intent: supply_email
+        entities:
+          - email
+      - action: action_update_email
+      - action: utter_more_service
+
+  - story: change email 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_service
+      - intent: change_email
+      - action: utter_ask_empid
+      - intent: supply_empid
+        entities:
+          - empid
+      - action: utter_ask_new_email
+      - intent: supply_email
+        entities:
+          - email
+      - action: action_update_email
+      - action: utter_more_service
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: show details 1
+    steps:
+      - intent: details
+      - action: utter_ask_empid
+      - intent: supply_empid
+        entities:
+          - empid
+      - action: action_get_emp_detail
+      - action: utter_more_service
+      - intent: affirm
+      - action: utter_service
+      - intent: details
+      - action: utter_ask_empid
+      - intent: supply_empid
+        entities:
+          - empid
+      - action: action_get_emp_detail
+      - action: utter_more_service
+
+  - story: show details 2
+    steps:
+      - intent: details
+      - action: utter_ask_empid
+      - intent: supply_empid
+        entities:
+          - empid
+      - action: action_get_emp_detail
+      - action: utter_more_service
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: change email 1
+    steps:
+      - intent: change_email
+      - action: utter_ask_empid
+      - intent: supply_empid
+        entities:
+          - empid
+      - action: utter_ask_new_email
+      - intent: supply_email
+        entities:
+          - email
+      - action: action_update_email
+      - action: utter_more_service
+      - intent: affirm
+      - action: utter_service
+      - intent: change_email
+      - action: utter_ask_empid
+      - intent: supply_empid
+        entities:
+          - empid
+      - action: utter_ask_new_email
+      - intent: supply_email
+        entities:
+          - email
+      - action: action_update_email
+      - action: utter_more_service
+
+  - story: change email 2
+    steps:
+      - intent: change_email
+      - action: utter_ask_empid
+      - intent: supply_empid
+        entities:
+          - empid
+      - action: utter_ask_new_email
+      - intent: supply_email
+        entities:
+          - email
+      - action: action_update_email
+      - action: utter_more_service
+      - intent: deny
       - action: utter_goodbye

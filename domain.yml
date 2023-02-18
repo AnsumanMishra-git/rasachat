@@ -42,7 +42,9 @@ responses:
   utter_happy:
     - text: Great, carry on!
   utter_greet:
-    - text: Hey! How can I help you?
+    - text: Hey, hope you're doing well!
+  utter_service:
+    - text: How can I help you?
       buttons:
       - title: User Details
         payload: /details
@@ -50,6 +52,13 @@ responses:
         payload: /change_email
       - title: Cricket News
         payload: /current_matches
+  utter_more_service:
+    - text: Do you need any more help ?
+      buttons:
+      - title: Yes
+        payload: /affirm
+      - title: No
+        payload: /deny
   utter_ask_email:
     - text: Please provide me your email.
   utter_ask_new_email:

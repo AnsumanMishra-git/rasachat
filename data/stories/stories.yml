@@ -5,6 +5,7 @@ stories:
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_service
       - intent: mood_great
       - action: utter_happy
 
@@ -12,6 +13,7 @@ stories:
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_service
       - intent: mood_unhappy
       - action: utter_cheer_up
       - action: utter_did_that_help
@@ -22,6 +24,7 @@ stories:
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_service
       - intent: mood_unhappy
       - action: utter_cheer_up
       - action: utter_did_that_help
@@ -32,29 +35,46 @@ stories:
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_service
       - intent: current_matches
       - action: action_match_news
-      - action: utter_did_that_help
+      - action: utter_more_service
       - intent: affirm
-      - action: utter_gratitude
-      - intent: goodbye
-      - action: utter_goodbye
+      - action: utter_service
+      - intent: current_matches
+      - action: action_match_news
+      - action: utter_more_service
 
+    
   - story: news path 2
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_service
       - intent: current_matches
       - action: action_match_news
-      - action: utter_did_that_help
+      - action: utter_more_service
       - intent: deny
-      - action: utter_ask_again
+      - action: utter_goodbye
+      
+  - story: news path 1
+    steps:
       - intent: current_matches
       - action: action_match_news
-      - action: utter_did_that_help
+      - action: utter_more_service
       - intent: affirm
-      - action: utter_gratitude
-      - intent: goodbye
+      - action: utter_service
+      - intent: current_matches
+      - action: action_match_news
+      - action: utter_more_service
+
+    
+  - story: news path 2
+    steps:
+      - intent: current_matches
+      - action: action_match_news
+      - action: utter_more_service
+      - intent: deny
       - action: utter_goodbye
 
   #   - story: register with right info
