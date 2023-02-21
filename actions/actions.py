@@ -9,6 +9,7 @@
 
 from typing import Any, Text, Dict, List
 from rasa_sdk.events import SlotSet
+from rasa_sdk.events import Restarted
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import logging
@@ -23,6 +24,18 @@ API_KEY = "d0b73bf4-e8fc-4d3b-a9d8-8b8b6467c36b"
 
 #This action is to signal that the assistant should get orderid from user and give order status .
 
+class ActionRestart(Action):
+
+  def name(self) -> Text:
+      return "action_restart"
+
+  async def run(
+      self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]
+  ) -> List[Dict[Text, Any]]:
+
+      # custom behavior
+      return [Restarted()]
+  
 class ActionGetEmpDetail(Action):
 
     def name(self)-> Text:

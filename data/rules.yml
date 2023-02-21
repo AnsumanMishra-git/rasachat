@@ -10,3 +10,9 @@
 #  - intent: bot_challenge
 #  - action: utter_iamabot
 version: "2.0"
+# rules:
+#   - rule: welcome user
+#     conversation_start: true  # this rule only applies at the beginning of a conversation
+#     steps:
+#       - action: utter_greet
+#       - action: utter_service

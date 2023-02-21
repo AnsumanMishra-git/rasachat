@@ -169,6 +169,7 @@ nlu:
       - how is ipl going
       - what was the result of the last match
       - when is the next match
+      - Give me Cricket News
 
   - intent: register
     examples: |
@@ -239,6 +240,7 @@ nlu:
       - show employee info
       - send employee details
       - fetch employee info
+      - Show me User Details
 
   - intent: supply_empid
     examples: |
@@ -265,5 +267,6 @@ nlu:
       - could you please change my email
       - i request you to change my email
       - change my email please
+      - Change my Email Address
 
 

@@ -5,20 +5,32 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: false
 intents:
-  - affirm
-  - greet
-  - goodbye
-  - deny
-  - supply_email
-  - current_matches
-  - register
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - details
-  - supply_empid
-  - change_email
-
+  - affirm:
+      use_entities: true
+  - greet:
+      use_entities: true
+  - goodbye:
+      use_entities: true
+  - deny:
+      use_entities: true
+  - supply_email:
+      use_entities: true
+  - current_matches:
+      use_entities: true
+  - register:
+      use_entities: true
+  - mood_great:
+      use_entities: true
+  - mood_unhappy:
+      use_entities: true
+  - bot_challenge:
+      use_entities: true
+  - details:
+      use_entities: true
+  - supply_empid:
+      use_entities: true
+  - change_email:
+      use_entities: true
 entities:
   - email
   - empid
@@ -35,8 +47,8 @@ slots:
     influence_conversation: false
 responses:
   utter_cheer_up:
-    - text: "Here is something to cheer you up:"
-      image: https://i.imgur.com/nGF1K8f.jpg
+    - image: https://i.imgur.com/nGF1K8f.jpg
+      text: "Here is something to cheer you up:"
   utter_iamabot:
     - text: I am a bot, powered by Rasa.
   utter_happy:
@@ -46,19 +58,20 @@ responses:
   utter_service:
     - text: How can I help you?
       buttons:
-      - title: User Details
-        payload: /details
-      - title: Change Email
-        payload: /change_email
-      - title: Cricket News
-        payload: /current_matches
+        - title: User Details
+          payload: Show me User Details
+        - title: Change Email
+          payload: Change my Email Address
+        - title: Cricket News
+          payload: Give me Cricket News
+
   utter_more_service:
-    - text: Do you need any more help ?
-      buttons:
-      - title: Yes
-        payload: /affirm
-      - title: No
-        payload: /deny
+    - buttons:
+        - payload: Yes
+          title: Yes
+        - payload: No
+          title: No
+      text: Do you need any more help ?
   utter_ask_email:
     - text: Please provide me your email.
   utter_ask_new_email:

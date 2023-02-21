@@ -15,6 +15,7 @@ stories:
       - intent: affirm
       - action: utter_acknowledge_provided_info
       - action: utter_goodbye
+      - action: action_restart
 
   - story: register path 2
     steps:
@@ -34,6 +35,7 @@ stories:
           - email
       - action: utter_acknowledge_provided_info
       - action: utter_goodbye
+      - action: action_restart
 
   - story: greet path
     steps:
@@ -77,6 +79,7 @@ stories:
       - action: utter_more_service
       - intent: deny
       - action: utter_goodbye
+      - action: action_restart
 
   - story: change email 1
     steps:
@@ -126,6 +129,7 @@ stories:
       - action: utter_more_service
       - intent: deny
       - action: utter_goodbye
+      - action: action_restart
 
   - story: show details 1
     steps:
@@ -157,6 +161,7 @@ stories:
       - action: utter_more_service
       - intent: deny
       - action: utter_goodbye
+      - action: action_restart
 
   - story: change email 1
     steps:
@@ -200,3 +205,4 @@ stories:
       - action: utter_more_service
       - intent: deny
       - action: utter_goodbye
+      - action: action_restart
