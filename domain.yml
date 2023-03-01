@@ -27,14 +27,26 @@ intents:
       use_entities: true
   - details:
       use_entities: true
-  - supply_empid:
+  - supply_tag:
+      use_entities: true
+  - supply_domain:
+      use_entities: true
+  - supply_id:
       use_entities: true
   - change_email:
       use_entities: true
+  - authenticate:
+      use_entities: true
 entities:
-  - email
+  - token
   - empid
+  - tenant_id
+  - tenant_domain
+  - service_tag
 slots:
+  token:
+    type: text
+    influence_conversation: false
   email:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
@@ -45,7 +57,34 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: false
+  check:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  key:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  tenant_id:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  tenant_domain:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  service_tag:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
 responses:
+  utter_ask_token:
+    - text: Provide me the secret token ?
   utter_cheer_up:
     - image: https://i.imgur.com/nGF1K8f.jpg
       text: "Here is something to cheer you up:"
@@ -56,15 +95,12 @@ responses:
   utter_greet:
     - text: Hey, hope you're doing well!
   utter_service:
-    - text: How can I help you?
-      buttons:
-        - title: User Details
-          payload: Show me User Details
-        - title: Change Email
-          payload: Change my Email Address
-        - title: Cricket News
-          payload: Give me Cricket News
-
+    - buttons:
+        - payload: I want to register
+          title: Register
+        - payload: Give me Cricket News
+          title: Cricket News
+      text: How can I help you?
   utter_more_service:
     - buttons:
         - payload: Yes
@@ -72,12 +108,12 @@ responses:
         - payload: No
           title: No
       text: Do you need any more help ?
-  utter_ask_email:
-    - text: Please provide me your email.
-  utter_ask_new_email:
-    - text: Please provide your new email.
-  utter_ask_empid:
-    - text: Please provide me your employee id.
+  utter_ask_tag:
+    - text: Please provide me your service tag.
+  utter_ask_id:
+    - text: Please provide your Tenant ID.
+  utter_ask_domain:
+    - text: Please provide me your Tenant Domain .
   utter_acknowledge_provided_info:
     - text: Thanks for the info!
   utter_ask_for_confirmation:
@@ -96,7 +132,14 @@ responses:
          Please repeat your query?
 actions:
   - action_match_news
-  - action_get_emp_detail
-  - action_update_email
-forms: {}
+  - action_check_tag
+  - action_get_status
+# - action_authenticated
+
+forms:
+  {}
+  # auth_form:
+  #   email:
+  #   - type: from_entity
+  #     entity: token
 e2e_actions: []

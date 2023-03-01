@@ -17,7 +17,6 @@
 #   url: "https://rasa-actions-hybrid.cfapps.us10-001.hana.ondemand.com/webhook"
 
 
-
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
 # https://rasa.com/docs/rasa/tracker-stores

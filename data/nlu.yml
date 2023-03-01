@@ -222,6 +222,13 @@ nlu:
       - am I talking to a bot?
       - am I talking to a human?
 
+  - intent: authenticate
+    examples: |
+      - authenticate
+      - authenticate me
+      - authenticate user
+      - authentication
+
   - intent: details
     examples: |
       - fetch user details
@@ -242,31 +249,64 @@ nlu:
       - fetch employee info
       - Show me User Details
 
-  - intent: supply_empid
+  - intent: supply_tag
     examples: |
-      - my emp id is [134927](empid)
-      - my emp id is [134925](empid)
-      - [1349127](empid)
-      - it is [124927](empid)
-      - emp id [134327](empid)
-      - [134327](empid)
-      - id is [134417](empid) 
-      - my employee id is [132927](empid)
-      - my employee id is [1343927](empid)
-      - [134925](empid)
-      - it is [134947](empid)
-      - employee id [1324927](empid)
-      - [134925](empid)
-      - id is [134227](empid) 
-  - intent: change_email
+      - my tag is [21PX7V3](service_tag)
+      - my service tag is [31PF7X5](service_tag)
+      - [13DG4G2](service_tag)
+      - it is [53HA8G1](service_tag)
+      - service tag [92PH6J4](service_tag)
+      - [13DG4G3](service_tag)
+      - tag is [25G4BF4](service_tag) 
+      - my service tag is [93BR3H4](service_tag)
+      - my tag is [14GN3G4](service_tag)
+      - [46FD4H5](service_tag)
+      - it is [36BD4J4](service_tag)
+      - tag [86EH3H4](service_tag)
+      - [32BR7K6](service_tag)
+      - tag is [75FY6H4](service_tag)
+
+  - intent: supply_domain
     examples: |
-      - change my email
-      - please change my email
-      - i want to change my email
-      - can i change my email
-      - could you please change my email
-      - i request you to change my email
-      - change my email please
-      - Change my Email Address
+      - my domain is [EUCIP.onmicrosoft.com](tenant_domain)
+      - my tenant domain is [GETGE.onmicrosoft.com](tenant_domain)
+      - [TRGW.onmicrosoft.com](tenant_domain)
+      - it is [WEHH.onmicrosoft.com](tenant_domain)
+      - tenant domain [ADNJ.onmicrosoft.com](tenant_domain)
+      - [ATJJ.onmicrosoft.com](tenant_domain)
+      - domain is [AERH.onmicrosoft.com](tenant_domain) 
+      - my tenant domain is [ABHT.onmicrosoft.com](tenant_domain)
+      - my domain is [GHBH.onmicrosoft.com](tenant_domain)
+      - [NSRT.onmicrosoft.com](tenant_domain)
+      - it is [ZGTT.onmicrosoft.com](tenant_domain)
+      - domain [JYJD.onmicrosoft.com](tenant_domain)
+      - [SJYS.onmicrosoft.com](tenant_domain)
+      - domain is [EAGR.onmicrosoft.com](tenant_domain)
 
+  - intent: supply_id
+    examples: |
+      - my tenant id is [dz2080fc-2456-41e3-36h5-2f266993d77b](tenant_id)
+      - [ac8590hk-5836-74h5-72h3-2j763756m47b](tenant_id)
+      - [yk5838ik-3665-75e3-88n7-7f385630d74h](tenant_id)
+      - it is [kg6894jk-6427-37y6-65h6-4y275737g56j](tenant_id)
+      - id [bd5674fc-7633-25r2-52t5-3g573676y25g](tenant_id)
+      - [vc3637fc-7563-73h2-53b4-1g764356v15r](tenant_id)
+      - tenant id is [zg8475fc-7864-73h2-84h6-1f762456n78u](tenant_id) 
+      - my id is [jf2467fc-2235-53d5-43f7-1h842456e26f](tenant_id)
+      - my tenant id is [rh3736fc-4567-35g3-35h6-3v843673j86w](tenant_id)
+      - [sy2746fc-7544-63g5-36b5-5b123412w22y](tenant_id)
+      - it is [cm6566fc-4324-75y6-36g3-6b644662t75k](tenant_id)
+      - tenant id [dj2056fc-7456-36h6-35a4-1b544367s37w](tenant_id)
+      - [sg2024fc-3568-46h7-25a7-3n843665j54k](tenant_id)
+      - id is [kf2075fc-3822-36h6-73h6-4f256645w45i](tenant_id)
 
+  # - intent: change_email
+  #   examples: |
+  #     - change my email
+  #     - please change my email
+  #     - i want to change my email
+  #     - can i change my email
+  #     - could you please change my email
+  #     - i request you to change my email
+  #     - change my email please
+  #     - Change my Email Address

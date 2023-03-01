@@ -1,41 +1,41 @@
 version: "2.0"
 
 stories:
-  - story: register path 1
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - action: utter_service
-      - intent: register
-      - action: utter_ask_email
-      - intent: supply_email
-        entities:
-          - email
-      - action: utter_ask_for_confirmation
-      - intent: affirm
-      - action: utter_acknowledge_provided_info
-      - action: utter_goodbye
-      - action: action_restart
+  # - story: register path 1
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - action: utter_service
+  #     - intent: register
+  #     - action: utter_ask_email
+  #     - intent: supply_email
+  #       entities:
+  #         - email
+  #     - action: utter_ask_for_confirmation
+  #     - intent: affirm
+  #     - action: utter_acknowledge_provided_info
+  #     - action: utter_goodbye
+  #     - action: action_restart
 
-  - story: register path 2
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - action: utter_service
-      - intent: register
-      - action: utter_ask_email
-      - intent: supply_email
-        entities:
-          - email
-      - action: utter_ask_for_confirmation
-      - intent: deny
-      - action: utter_ask_email
-      - intent: supply_email
-        entities:
-          - email
-      - action: utter_acknowledge_provided_info
-      - action: utter_goodbye
-      - action: action_restart
+  # - story: register path 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - action: utter_service
+  #     - intent: register
+  #     - action: utter_ask_email
+  #     - intent: supply_email
+  #       entities:
+  #         - email
+  #     - action: utter_ask_for_confirmation
+  #     - intent: deny
+  #     - action: utter_ask_email
+  #     - intent: supply_email
+  #       entities:
+  #         - email
+  #     - action: utter_acknowledge_provided_info
+  #     - action: utter_goodbye
+  #     - action: action_restart
 
   - story: greet path
     steps:
@@ -43,166 +43,265 @@ stories:
       - action: utter_greet
       - action: utter_service
 
-  - story: show details 1
+  - story: register when service tag approved 1
     steps:
       - intent: greet
       - action: utter_greet
       - action: utter_service
-      - intent: details
-      - action: utter_ask_empid
-      - intent: supply_empid
+      - intent: register
+      - action: utter_ask_tag
+      - intent: supply_tag
         entities:
-          - empid
-      - action: action_get_emp_detail
+          - service_tag
+      - action: action_check_tag
+      - slot_was_set:
+        - check: true
+      - action: utter_ask_id
+      - intent: supply_id
+        entities:
+          - tenant_id
+      - action: utter_ask_domain
+      - intent: supply_domain
+        entities:
+            - tenant_domain
+      - action: action_get_status
       - action: utter_more_service
       - intent: affirm
+      - action: action_restart
       - action: utter_service
-      - intent: details
-      - action: utter_ask_empid
-      - intent: supply_empid
+      - intent: register
+      - action: utter_ask_tag
+      - intent: supply_tag
         entities:
-          - empid
-      - action: action_get_emp_detail
+          - service_tag
+      - action: action_check_tag
+      - slot_was_set:
+        - check: true
+      - action: utter_ask_id
+      - intent: supply_id
+        entities:
+          - tenant_id
+      - action: utter_ask_domain
+      - intent: supply_domain
+        entities:
+            - tenant_domain
+      - action: action_get_status
       - action: utter_more_service
 
-  - story: show details 2
+  - story: register when service tag approved 2
     steps:
       - intent: greet
       - action: utter_greet
       - action: utter_service
-      - intent: details
-      - action: utter_ask_empid
-      - intent: supply_empid
+      - intent: register
+      - action: utter_ask_tag
+      - intent: supply_tag
         entities:
-          - empid
-      - action: action_get_emp_detail
+          - service_tag
+      - action: action_check_tag
+      - slot_was_set:
+        - check: true
+      - action: utter_ask_id
+      - intent: supply_id
+        entities:
+          - tenant_id
+      - action: utter_ask_domain
+      - intent: supply_domain
+        entities:
+            - tenant_domain
+      - action: action_get_status
       - action: utter_more_service
       - intent: deny
       - action: utter_goodbye
       - action: action_restart
 
-  - story: change email 1
+  - story: register when service tag approved 1
+    steps:
+      - intent: register
+      - action: utter_ask_tag
+      - intent: supply_tag
+        entities:
+          - service_tag
+      - action: action_check_tag
+      - slot_was_set:
+        - check: true
+      - action: utter_ask_id
+      - intent: supply_id
+        entities:
+          - tenant_id
+      - action: utter_ask_domain
+      - intent: supply_domain
+        entities:
+            - tenant_domain
+      - action: action_get_status
+      - action: utter_more_service
+      - intent: affirm
+      - action: action_restart
+      - action: utter_service
+      - intent: register
+      - action: utter_ask_tag
+      - intent: supply_tag
+        entities:
+          - service_tag
+      - action: action_check_tag
+      - slot_was_set:
+        - check: true
+      - action: utter_ask_id
+      - intent: supply_id
+        entities:
+          - tenant_id
+      - action: utter_ask_domain
+      - intent: supply_domain
+        entities:
+            - tenant_domain
+      - action: action_get_status
+      - action: utter_more_service
+
+  - story: register when service tag approved 2
+    steps:
+      - intent: register
+      - action: utter_ask_tag
+      - intent: supply_tag
+        entities:
+          - service_tag
+      - action: action_check_tag
+      - slot_was_set:
+        - check: true
+      - action: utter_ask_id
+      - intent: supply_id
+        entities:
+          - tenant_id
+      - action: utter_ask_domain
+      - intent: supply_domain
+        entities:
+            - tenant_domain
+      - action: action_get_status
+      - action: utter_more_service
+      - intent: deny
+      - action: utter_goodbye
+      - action: action_restart
+
+  - story: register when service tag not approved 1
     steps:
       - intent: greet
       - action: utter_greet
       - action: utter_service
-      - intent: change_email
-      - action: utter_ask_empid
-      - intent: supply_empid
+      - intent: register
+      - action: utter_ask_tag
+      - intent: supply_tag
         entities:
-          - empid
-      - action: utter_ask_new_email
-      - intent: supply_email
-        entities:
-          - email
-      - action: action_update_email
+          - service_tag
+      - action: action_check_tag
+      - slot_was_set:
+        - check: false
       - action: utter_more_service
-      - intent: affirm
-      - action: utter_service
-      - intent: change_email
-      - action: utter_ask_empid
-      - intent: supply_empid
-        entities:
-          - empid
-      - action: utter_ask_new_email
-      - intent: supply_email
-        entities:
-          - email
-      - action: action_update_email
-      - action: utter_more_service
-
-  - story: change email 2
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - action: utter_service
-      - intent: change_email
-      - action: utter_ask_empid
-      - intent: supply_empid
-        entities:
-          - empid
-      - action: utter_ask_new_email
-      - intent: supply_email
-        entities:
-          - email
-      - action: action_update_email
-      - action: utter_more_service
-      - intent: deny
-      - action: utter_goodbye
       - action: action_restart
 
-  - story: show details 1
+  - story: show details when user doesnt exist 2
     steps:
-      - intent: details
-      - action: utter_ask_empid
-      - intent: supply_empid
+      - intent: register
+      - action: utter_ask_tag
+      - intent: supply_tag
         entities:
-          - empid
-      - action: action_get_emp_detail
+          - service_tag
+      - action: action_check_tag
+      - slot_was_set:
+        - check: false
       - action: utter_more_service
-      - intent: affirm
-      - action: utter_service
-      - intent: details
-      - action: utter_ask_empid
-      - intent: supply_empid
-        entities:
-          - empid
-      - action: action_get_emp_detail
-      - action: utter_more_service
-
-  - story: show details 2
-    steps:
-      - intent: details
-      - action: utter_ask_empid
-      - intent: supply_empid
-        entities:
-          - empid
-      - action: action_get_emp_detail
-      - action: utter_more_service
-      - intent: deny
-      - action: utter_goodbye
       - action: action_restart
 
-  - story: change email 1
-    steps:
-      - intent: change_email
-      - action: utter_ask_empid
-      - intent: supply_empid
-        entities:
-          - empid
-      - action: utter_ask_new_email
-      - intent: supply_email
-        entities:
-          - email
-      - action: action_update_email
-      - action: utter_more_service
-      - intent: affirm
-      - action: utter_service
-      - intent: change_email
-      - action: utter_ask_empid
-      - intent: supply_empid
-        entities:
-          - empid
-      - action: utter_ask_new_email
-      - intent: supply_email
-        entities:
-          - email
-      - action: action_update_email
-      - action: utter_more_service
+  # - story: change email 1
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - action: utter_service
+  #     - intent: change_email
+  #     - action: utter_ask_empid
+  #     - intent: supply_empid
+  #       entities:
+  #         - empid
+  #     - action: utter_ask_new_email
+  #     - intent: supply_email
+  #       entities:
+  #         - email
+  #     - action: action_update_email
+  #     - action: utter_more_service
+  #     - intent: affirm
+  #     - action: utter_service
+  #     - intent: change_email
+  #     - action: utter_ask_empid
+  #     - intent: supply_empid
+  #       entities:
+  #         - empid
+  #     - action: utter_ask_new_email
+  #     - intent: supply_email
+  #       entities:
+  #         - email
+  #     - action: action_update_email
+  #     - action: utter_more_service
 
-  - story: change email 2
-    steps:
-      - intent: change_email
-      - action: utter_ask_empid
-      - intent: supply_empid
-        entities:
-          - empid
-      - action: utter_ask_new_email
-      - intent: supply_email
-        entities:
-          - email
-      - action: action_update_email
-      - action: utter_more_service
-      - intent: deny
-      - action: utter_goodbye
-      - action: action_restart
+  # - story: change email 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - action: utter_service
+  #     - intent: change_email
+  #     - action: utter_ask_empid
+  #     - intent: supply_empid
+  #       entities:
+  #         - empid
+  #     - action: utter_ask_new_email
+  #     - intent: supply_email
+  #       entities:
+  #         - email
+  #     - action: action_update_email
+  #     - action: utter_more_service
+  #     - intent: deny
+  #     - action: utter_goodbye
+  #     - action: action_restart
+
+  
+
+  # - story: change email 1
+  #   steps:
+  #     - intent: change_email
+  #     - action: utter_ask_empid
+  #     - intent: supply_empid
+  #       entities:
+  #         - empid
+  #     - action: utter_ask_new_email
+  #     - intent: supply_email
+  #       entities:
+  #         - email
+  #     - action: action_update_email
+  #     - action: utter_more_service
+  #     - intent: affirm
+  #     - action: utter_service
+  #     - intent: change_email
+  #     - action: utter_ask_empid
+  #     - intent: supply_empid
+  #       entities:
+  #         - empid
+  #     - action: utter_ask_new_email
+  #     - intent: supply_email
+  #       entities:
+  #         - email
+  #     - action: action_update_email
+  #     - action: utter_more_service
+
+  # - story: change email 2
+  #   steps:
+  #     - intent: change_email
+  #     - action: utter_ask_empid
+  #     - intent: supply_empid
+  #       entities:
+  #         - empid
+  #     - action: utter_ask_new_email
+  #     - intent: supply_email
+  #       entities:
+  #         - email
+  #     - action: action_update_email
+  #     - action: utter_more_service
+  #     - intent: deny
+  #     - action: utter_goodbye
+  #     - action: action_restart

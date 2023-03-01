@@ -10,9 +10,18 @@
 #  - intent: bot_challenge
 #  - action: utter_iamabot
 version: "2.0"
-# rules:
-#   - rule: welcome user
-#     conversation_start: true  # this rule only applies at the beginning of a conversation
-#     steps:
-#       - action: utter_greet
-#       - action: utter_service
+rules:
+  # - rule: welcome user
+  #   conversation_start: true  # this rule only applies at the beginning of a conversation
+  #   steps:
+  #   - intent: authenticate
+  #   - action: auth_form
+  #   - active_loop: auth_form
+
+  # - rule: Auth submit and deactivate form
+  #   condition:
+  #   - active_loop: auth_form
+  #   steps:
+  #   - action: auth_form
+  #   - active_loop: null
+  #   - action: action_authenticated
