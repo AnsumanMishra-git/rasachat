@@ -1,0 +1,102 @@
+# version: "2.0"
+
+# stories:
+#   - story: happy path
+#     steps:
+#       - intent: greet
+#       - action: utter_greet
+#       - action: utter_service
+#       - intent: mood_great
+#       - action: utter_happy
+
+#   - story: sad path 1
+#     steps:
+#       - intent: greet
+#       - action: utter_greet
+#       - action: utter_service
+#       - intent: mood_unhappy
+#       - action: utter_cheer_up
+#       - action: utter_did_that_help
+#       - intent: affirm
+#       - action: utter_happy
+
+#   - story: sad path 2
+#     steps:
+#       - intent: greet
+#       - action: utter_greet
+#       - action: utter_service
+#       - intent: mood_unhappy
+#       - action: utter_cheer_up
+#       - action: utter_did_that_help
+#       - intent: deny
+#       - action: utter_goodbye
+#       - action: action_restart
+
+#   - story: news path 1
+#     steps:
+#       - intent: greet
+#       - action: utter_greet
+#       - action: utter_service
+#       - intent: current_matches
+#       - action: action_match_news
+#       - action: utter_more_service
+#       - intent: affirm
+#       - action: utter_service
+#       - intent: current_matches
+#       - action: action_match_news
+#       - action: utter_more_service
+
+#   - story: news path 2
+#     steps:
+#       - intent: greet
+#       - action: utter_greet
+#       - action: utter_service
+#       - intent: current_matches
+#       - action: action_match_news
+#       - action: utter_more_service
+#       - intent: deny
+#       - action: utter_goodbye
+#       - action: action_restart
+
+#   - story: news path 1
+#     steps:
+#       - intent: current_matches
+#       - action: action_match_news
+#       - action: utter_more_service
+#       - intent: affirm
+#       - action: utter_service
+#       - intent: current_matches
+#       - action: action_match_news
+#       - action: utter_more_service
+
+#   - story: news path 2
+#     steps:
+#       - intent: current_matches
+#       - action: action_match_news
+#       - action: utter_more_service
+#       - intent: deny
+#       - action: utter_goodbye
+#       - action: action_restart
+
+#   #   - story: register with right info
+#   #   steps:
+#   #     - intent: greet
+#   #     - action: utter_greet
+#   #     - intent: register
+#   #     - action: utter_ask_name
+#   #     - intent: supply_name
+#   #       entities:
+#   #         - fname
+#   #         - lname
+#   #     - action: utter_ask_email
+#   #     - intent: supply_email
+#   #       entities:
+#   #         - email
+#   #     - action: utter_ask_number
+#   #     - intent: supply_number
+#   #       entities:
+#   #         - number
+#   #     - action: utter_ask_for_confirmation
+#   #     - intent: affirm
+#   #     - action: utter_acknowledge_provided_info
+#   #     - action: utter_goodbye
