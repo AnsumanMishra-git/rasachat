@@ -2,3 +2,4 @@ models/
 .log
 COMMANDS.txt
 node_modules/
+.env

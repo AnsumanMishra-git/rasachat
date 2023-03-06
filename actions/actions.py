@@ -17,10 +17,13 @@ import requests
 import json
 from datetime import datetime
 import random
+from dotenv import load_dotenv
+import os #provides ways to access the Operating System and allows us to read the environment variables
 
 
 API_URL = "https://api.cricapi.com/v1/currentMatches"
 API_KEY = "d0b73bf4-e8fc-4d3b-a9d8-8b8b6467c36b"
+load_dotenv()
 
 #This action is to signal that the assistant should get orderid from user and give order status .
 
@@ -36,28 +39,85 @@ class ActionRestart(Action):
       # custom behavior
       return [Restarted()]
   
+def get_new_token(access_token_url,client_id,client_secret,verify):
+    token_req_payload = {'grant_type': 'client_credentials'}
+    token_response = requests.post(access_token_url,
+                                data=token_req_payload, 
+                                verify=verify, 
+                                allow_redirects=False,
+                                auth=(client_id, client_secret))
+
+    if token_response.status_code !=200:
+        print("Failed to obtain token from the OAuth 2.0 server")
+    else:
+        print("Successfuly obtained a new token")
+
+    tokens = json.loads(token_response.text)
+    return [token_response.status_code,tokens['access_token']]
+
 class ActionGetStatus(Action):
 
     def name(self)-> Text:
         return "action_get_status"
-    
+
     def run(self, dispatcher, tracker, domain):
         id = tracker.get_slot('tenant_id')
         dom = tracker.get_slot('tenant_domain')
         key = tracker.get_slot('key')
-        data={
-            "SoldToCustomerID": "562764278",
-            "ReceivedFromCustomerID": "247856287",
-            "PurchaseOrderId": "34745546",
+        
+        body={
+            "SoldToCustomerID": "0000002811",
+            "ReceivedFromCustomerID": "0000002811",
+            "PurchaseOrderId": "646466464",
             "TenantID": id,
             "TenantDomain": dom,
             "Devices": [{
-            "ProductKey":key
+                "ProductKey": key
             }]
         }
-        print("id is " +id+" , domain is "+dom+" , key is "+key)
-        response="""Registration Successful"""
-        dispatcher.utter_message(response)
+
+        CBR_url_1 = "https://apigtwob.us.dell.com/PROD/computerbuildreport/royd/v1/autopilot"
+
+        access_token_url = os.getenv("access_token_url_2")
+        client_id = os.getenv("client_id_2")
+        client_secret = os.getenv("client_secret_2")
+
+        token_response = get_new_token(access_token_url,client_id,client_secret,True)
+        token=token_response[1]
+        token_status_code=token_response[0]
+        # token="55963ed0-0f5e-4565-8cbc-a27d0e5ee95e"
+        if token_status_code==200:
+            print(token)
+            ##   call the API with the token
+            api_call_headers = {'Authorization': 'Bearer ' + token}
+            api_call_response = requests.post(CBR_url_1, headers=api_call_headers,json=body)
+            response_json=api_call_response.json()
+
+            if	api_call_response.status_code in [401,400] :
+                text="Failed to obtain the batchId . Please check your VPN connectivity or try again later."
+            else:
+                BatchID=str(response_json['BatchId'])
+
+                print("batch id is " +BatchID+" tenant id is " +id+" , tenant domain is "+dom+" , product key is "+str(key))
+            
+                CBR_url_2 = "https://apigtwob.us.dell.com/PROD/computerbuildreport/royd/v1/autopilot?BatchID="+BatchID
+
+                print(CBR_url_2)
+
+                api_call_headers = {'Authorization': 'Bearer ' + token}
+                api_call_response = requests.get(CBR_url_2, headers=api_call_headers,json=body)
+                response_json=api_call_response.json()
+                print(response_json)
+                text=""
+                if	api_call_response.status_code in [401,400] :
+                    text = "Registration Process Failed . Please check your VPN connectivity or try again later."
+                elif response_json['Devices'][0]['DeviceStatusName'] == "Error":
+                    text="Registration Process Failed. Reason for failure : "+ response_json['Devices'][0]['DeviceErrorName']
+                else:
+                    text="Registration Successful . Your RegistrationID is : "+response_json['Devices'][0]['RegistrationId']
+        else:
+            text="Please check your VPN connectivity or try again later."
+        dispatcher.utter_message(text)
         return [SlotSet('check', None),SlotSet('key', None),SlotSet('service_tag', None),SlotSet('tenant_id', None),SlotSet('tenant_domain', None)]
 
 class ActionCheckTag(Action):
@@ -67,17 +127,54 @@ class ActionCheckTag(Action):
     def run(self, dispatcher, tracker, domain):
 
         tag = tracker.get_slot('service_tag')
-        data = {
-            "tag": tag
-        }
-        res = requests.get('http://localhost:3000/check',json=data).json()
-        prod_key="234532"
-        print(res)
-        response="""Thank You."""
-        if(res==False):
-            response = """No product key available for the given service tag"""
+        body = {
+                "messageHeader": {
+                    "version": "11",
+                    "messageType": "1",
+                    "messageId": "1",
+                    "correlationId": "1",
+                    "processDateTime": "3/08/2021 9:38:06 AM",
+                    "messageNotes": "1"
+                },
+                "messagePayload": {
+                    "servicetags": [
+                        {
+                            "servicetag": tag
+                        }
+                    ]
+                }
+            }
+        api_url = "https://computerbuildreportinfo.delpprov.delltechnologies.com/api/validate"
+
+        access_token_url = os.getenv("access_token_url_1")
+        client_id = os.getenv("client_id_1")
+        client_secret = os.getenv("client_secret_1")
+
+        token_response = get_new_token(access_token_url,client_id,client_secret,False)
+        token=token_response[1]
+        token_status_code=token_response[0]
+        # token="55963ed0-0f5e-4565-8cbc-a27d0e5ee95e"
+        if token_status_code==200:
+            print(token)
+
+            api_call_headers = {'Authorization': 'Bearer ' + token}
+            api_call_response = requests.post(api_url, headers=api_call_headers,verify=False, json=body)
+            response_json=api_call_response.json()
+            pk_id=response_json['messagePayload']['response']['validationResults'][0]['productKey']
+            is_valid=True
+
+            if	api_call_response.status_code in [401,400] :
+                is_valid=False
+                response="Failed to obtain the Product Key . Please check your VPN connectivity or try again later."
+            else:
+                response="""Thank You."""
+                if(pk_id==""):
+                    is_valid=False
+                    response = """No product key available for the given service tag"""
+        else:
+            response="Please check your VPN connectivity or try again later."
         dispatcher.utter_message(response)
-        return [SlotSet('check', res),SlotSet('key', prod_key)]
+        return [SlotSet('check', is_valid),SlotSet('key', pk_id)]
     
 #This action is to signal that the assistant should get email id from user and give response if email is updated successfully or not.
 # class ActionUpdateEmail(Action):

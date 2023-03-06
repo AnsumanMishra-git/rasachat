@@ -251,7 +251,7 @@ nlu:
 
   - intent: supply_tag
     examples: |
-      - my tag is [21PX7V3](service_tag)
+      - my tag is [21PX7V5](service_tag)
       - my service tag is [31PF7X5](service_tag)
       - [13DG4G2](service_tag)
       - it is [53HA8G1](service_tag)
@@ -285,7 +285,7 @@ nlu:
 
   - intent: supply_id
     examples: |
-      - my tenant id is [dz2080fc-2456-41e3-36h5-2f266993d77b](tenant_id)
+      - my tenant id is [dc2080fa-9582-41e3-88e8-1d266993d77b](tenant_id)
       - [ac8590hk-5836-74h5-72h3-2j763756m47b](tenant_id)
       - [yk5838ik-3665-75e3-88n7-7f385630d74h](tenant_id)
       - it is [kg6894jk-6427-37y6-65h6-4y275737g56j](tenant_id)
