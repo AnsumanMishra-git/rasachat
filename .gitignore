@@ -1,6 +1,6 @@
+credentials.yml
 models/
 .log
 COMMANDS.txt
 node_modules/
 .env
-credentials.yml
