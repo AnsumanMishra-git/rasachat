@@ -3,3 +3,4 @@ models/
 COMMANDS.txt
 node_modules/
 .env
+credentials.yml
