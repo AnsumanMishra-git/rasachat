@@ -1,4 +1,5 @@
 credentials.yml
+endpoints.yml
 models/
 .log
 COMMANDS.txt
