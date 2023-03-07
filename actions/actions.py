@@ -40,20 +40,24 @@ class ActionRestart(Action):
       return [Restarted()]
   
 def get_new_token(access_token_url,client_id,client_secret,verify):
-    token_req_payload = {'grant_type': 'client_credentials'}
-    token_response = requests.post(access_token_url,
+    try:
+        token_req_payload = {'grant_type': 'client_credentials'}
+        token_response = requests.post(access_token_url,
                                 data=token_req_payload, 
                                 verify=verify, 
                                 allow_redirects=False,
                                 auth=(client_id, client_secret))
 
-    if token_response.status_code !=200:
-        print("Failed to obtain token from the OAuth 2.0 server")
-    else:
-        print("Successfuly obtained a new token")
+        if token_response.status_code !=200:
+            print("Failed to obtain token from the OAuth 2.0 server")
+        else:
+            print("Successfuly obtained a new token")
 
-    tokens = json.loads(token_response.text)
-    return [token_response.status_code,tokens['access_token']]
+        tokens = json.loads(token_response.text)
+        return [token_response.status_code,tokens['access_token']]
+    except:
+        print("Connection Failed. Please check your VPN or try again later")
+        return [404,""]
 
 class ActionGetStatus(Action):
 
@@ -86,6 +90,7 @@ class ActionGetStatus(Action):
         token=token_response[1]
         token_status_code=token_response[0]
         # token="55963ed0-0f5e-4565-8cbc-a27d0e5ee95e"
+        
         if token_status_code==200:
             print(token)
             ##   call the API with the token
@@ -154,6 +159,8 @@ class ActionCheckTag(Action):
         token=token_response[1]
         token_status_code=token_response[0]
         # token="55963ed0-0f5e-4565-8cbc-a27d0e5ee95e"
+        is_valid=False
+        pk_id=""
         if token_status_code==200:
             print(token)
 
