@@ -21,9 +21,11 @@ from dotenv import load_dotenv
 import os #provides ways to access the Operating System and allows us to read the environment variables
 
 
-API_URL = "https://api.cricapi.com/v1/currentMatches"
-API_KEY = "d0b73bf4-e8fc-4d3b-a9d8-8b8b6467c36b"
+
 load_dotenv()
+
+API_URL = "https://api.cricapi.com/v1/currentMatches"
+API_KEY =  os.getenv("API_KEY")
 
 #This action is to signal that the assistant should get orderid from user and give order status .
 
